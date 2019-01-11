@@ -1,0 +1,26 @@
+
+  <form (submit)="onAddBlog(blogForm)" #blogForm="ngForm">
+    <div class='container'>
+    <tr><input type="text" name="MovieName" placeholder="moviename" required ngModel #title="ngModel" /></tr>
+    <tr>
+      <p *ngIf="title.invalid" class="text-danger">Please enter a value</p>
+    </tr>
+
+    <tr>
+      <textarea rows=5 type="text" name="Review" placeholder="movie review" required ngModel #content="ngModel"></textarea></tr>
+    <tr>
+      <p class="text-danger" *ngIf="content.invalid">Please enter review</p>
+    </tr>
+    <tr>
+      <button type="submit" class="btn-primary">Add Review</button></tr>
+    </div>
+
+
+  <div class="container" *ngFor="let item of blogs" >
+      <p>Hi</p>
+      <p>{{item.title}}</p>
+      <p>{{item.content}}</p>
+    </div>
+
+  </form>
+
